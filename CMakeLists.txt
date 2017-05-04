@@ -129,16 +129,10 @@ target_link_libraries(
     ${PROJECT_NAME}
     xz
 )
+discard_syms(systemd)
 
 # inject config.h dependency
 set_source_files_properties(
     ${source_files}
     PROPERTIES OBJECT_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/config.h"
-)
-
-# copy shared library to executable output path
-add_custom_command(
-    TARGET systemd
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJECT_NAME}> ${EXECUTABLE_OUTPUT_PATH}
 )
