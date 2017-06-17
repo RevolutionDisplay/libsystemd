@@ -129,7 +129,7 @@ target_link_libraries(
     ${PROJECT_NAME}
     xz
 )
-discard_syms(systemd)
+discard_syms(${PROJECT_NAME})
 
 # inject config.h dependency
 set_source_files_properties(
