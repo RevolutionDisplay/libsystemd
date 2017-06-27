@@ -16,6 +16,7 @@ add_definitions(
     -DCATALOG_DATABASE="/var/lib/systemd/catalog/database"
     -DPACKAGE_STRING="systemd 229"
     -fno-common
+    -fno-strict-aliasing
     -fvisibility=hidden
     -Wall
     -Wextra
